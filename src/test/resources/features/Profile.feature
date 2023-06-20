@@ -1,7 +1,7 @@
-@Regression
+@Regression @Profile
 Feature: Feature to validate BookStore Application Profile scenerios
 
-  @addBook @Profile
+  @addBook
   Scenario: Add Book to the profile
     Given User successfully logged into BookStore Application with username "demoqa_testuser" and password "Te$t1234"
     And User checks for number of existing books added to profile
@@ -13,7 +13,7 @@ Feature: Feature to validate BookStore Application Profile scenerios
     And User navigates to profile page by menu
     And User should verify book name added to the profile 
 
-  @deleteBook @Profile
+  @deleteBook
   Scenario: Delete Book from the profile
  	 	Given User successfully logged into BookStore Application with username "demoqa_testuser" and password "Te$t1234"
  	 	When User clicks delete button for "You Don't Know JS" book 
@@ -22,7 +22,7 @@ Feature: Feature to validate BookStore Application Profile scenerios
     And User should accept the alert
     And User should verify book is deleted 
   
-  @addAllBooks @Profile
+  @addAllBooks
   Scenario: Add all the books to the profile  
   	Given User successfully logged into BookStore Application with username "demoqa_testuser" and password "Te$t1234"
     And User clicks on BookStore button
@@ -32,14 +32,14 @@ Feature: Feature to validate BookStore Application Profile scenerios
   
   
   
-  @validateSearchBox @Profile
+  @validateSearchBox
   Scenario: Validate Search box
  	 Given User successfully logged into BookStore Application with username "demoqa_testuser" and password "Te$t1234"
  	 When User searches for "JavaScript" book
  	 Then Books with search criteria needs to be displayed
   
  
-  @validatePagination @Profile
+  @validatePagination
   Scenario: Validate Pagination 
     Given User successfully logged into BookStore Application with username "demoqa_testuser" and password "Te$t1234"
     When User has multiple page data
@@ -48,14 +48,14 @@ Feature: Feature to validate BookStore Application Profile scenerios
     And all records should be displayed in single page
   
 
-  @validateSorting @Profile
+  @validateSorting
   Scenario: Validate Ascending Sort
   	Given User successfully logged into BookStore Application with username "demoqa_testuser" and password "Te$t1234"
     When User clicks on Author column
     Then Books data should be in sorted order by Author.
   
     
-  @deleteAllBooks @Profile
+  @deleteAllBooks
   Scenario: Delete All books from the profile
   	Given User successfully logged into BookStore Application with username "demoqa_testuser" and password "Te$t1234"
     When User clicks on Delete All books button
