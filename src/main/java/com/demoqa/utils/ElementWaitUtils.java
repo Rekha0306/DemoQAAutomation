@@ -5,11 +5,9 @@ package com.demoqa.utils;
 import java.util.List;
 
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -125,30 +123,8 @@ public class ElementWaitUtils {
 
 	}
 	
-	public WebElement waitForVisibilityOfElement(By element) {
 
-		WebElement webElement = null;
-
-		try {
-			webElement  = wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-
-		return webElement;
-
-	}
 	
-	/**
-	 * This method will wait for the specific time till the requested element invisibility on the screen.
-	 * @param element
-	 * @param durationInSeconds
-	 * @return
-	 */
-	public boolean waitForInVisibilityOfElement(WebElement element) {
-
-		return wait.until(ExpectedConditions.invisibilityOf(element));
-	}
 
 	/**
 	 * This method will wait for the specific time to find the element and fetch the text.
@@ -180,34 +156,11 @@ public class ElementWaitUtils {
 
 	}
 
-	/**
-	 * This method will be used to click on an button or href links using mouse actions
-	 * @param element
-	 * @param durationInSeconds
-	 */
-	public void mouseHoverAndClick(WebElement element) {
-
-		WebElement webElement = waitForVisibilityOfElement(element);
-		Actions actions = new Actions(driver);
-		actions.moveToElement(webElement).click().build().perform();
-
-	}
 	
 	public void javaExecutorScrollIntoView(WebElement element) {
 	        JavascriptExecutor jse = (JavascriptExecutor) driver;
 	        jse.executeScript("arguments[0].scrollIntoView()", waitForVisibilityOfElement(element));
 	 }
-	
-	public void javaExecutorScrollDown(WebElement element) {
-        JavascriptExecutor jse = (JavascriptExecutor) driver;
-
-        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-	}
-
-	public void javaExecutorClick(WebElement element) {
-	        JavascriptExecutor executor = (JavascriptExecutor) driver;
-	        executor.executeScript("arguments[0].click();", waitForVisibilityOfElement(element));
-	}
 	
 	public void javaExecutorHideElem(WebElement element) {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
