@@ -5,7 +5,7 @@
 ## Project Purpose
 This project aims to validate sample test cases using automation test framework that uses Selenium and Cucumber with Java as the programming language.
 
-Manual test scripts are placed under testcases folder
+Manual test scripts are placed under **DemoQAAutomation/testcases** folder
 
 ---
 
